@@ -1,1 +1,88 @@
-/*# sourceMappingURL=bio.css.map */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.hero {
+  background-image: url("../assets/images/hero-bio.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 33vh;
+  display: flex;
+}
+.hero__title {
+  color: white;
+  align-self: center;
+  padding-left: 1rem;
+  font-size: 2rem;
+}
+
+.about {
+  padding-top: 1.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.about__title {
+  font-size: 2rem;
+}
+.about__image {
+  width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.about__qoute {
+  line-height: 1.5;
+}
+.about__qoute-author {
+  line-height: 1.5;
+}
+
+.description {
+  padding-top: 1.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.description__subtitle {
+  padding-bottom: 1rem;
+}
+
+.gallery {
+  padding-top: 1.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: #FAFAFA;
+}
+.gallery__title {
+  font-size: 2rem;
+}
+.gallery__photos {
+  display: flex;
+  flex-direction: column;
+}
+.gallery__item {
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.footer {
+  background-color: #323232;
+  padding-top: 1.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.footer__title {
+  color: white;
+  font-size: 2rem;
+  padding-bottom: 1rem;
+}
+.footer__icons {
+  padding-bottom: 1rem;
+}
+.footer__contact {
+  margin-bottom: 1.5rem;
+  color: white;
+}/*# sourceMappingURL=bio.css.map */
