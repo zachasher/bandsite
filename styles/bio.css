@@ -2,14 +2,84 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-size: 16px;
+}
+
+html {
+  font-size: 100%;
+}
+
+p,
+h6 {
+  font-size: 1rem;
+}
+
+h5 {
+  font-size: 1.4rem;
+}
+
+h4 {
+  font-size: 1.96rem;
+}
+
+h3 {
+  font-size: 2.74rem;
+}
+
+h2 {
+  font-size: 3.84rem;
+}
+
+h1 {
+  font-size: 5.38rem;
+}
+
+@font-face {
+  font-family: AvenirNext;
+  src: url("/assets/fonts/AvenirNextLTPro-Regular.otf") format("OpenType");
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: AvenirNext;
+  src: url("/assets/fonts/AvenirNextLTPro-Demi.otf") format("OpenType");
+  font-style: normal;
+  font-weight: 600;
+}
+@font-face {
+  font-family: AvenirNext;
+  src: url("/assets/fonts/AvenirNextLTPro-Bold.otf") format("OpenType");
+  font-style: normal;
+  font-weight: 700;
+}
+.description__text {
+  font-family: AvenirNext;
+  font-style: normal;
+  font-weight: 400;
+  color: black;
+  font-size: 1rem;
+}
+
+.gallery__title {
+  font-family: AvenirNext;
+  font-style: normal;
+  font-weight: 600;
+  color: black;
+  font-size: 2rem;
+}
+
+.description__subtitle {
+  font-family: AvenirNext;
+  font-style: normal;
+  font-weight: 600;
+  color: black;
+  font-size: 1rem;
 }
 
 .hero {
   background-image: url("../assets/images/hero-bio.jpg");
   background-size: cover;
   background-position: center;
-  height: 33vh;
+  height: 25vh;
   display: flex;
 }
 .hero__title {
@@ -56,6 +126,7 @@
 }
 .gallery__title {
   font-size: 2rem;
+  padding-bottom: 1rem;
 }
 .gallery__photos {
   display: flex;
@@ -63,7 +134,7 @@
 }
 .gallery__item {
   width: 100%;
-  padding: 1rem 0;
+  padding-bottom: 1rem;
 }
 
 .footer {

@@ -1,10 +1,11 @@
 @use "./partials/resets" as *;
+@use "./partials/fonts" as *;
 
 .hero {
     background-image: url("../assets/images/hero-bio.jpg");
     background-size: cover;
     background-position: center;
-    height: 33vh;
+    height: 25vh;
     display: flex;
 
     &__title {
@@ -57,6 +58,7 @@
 
     &__title {
         font-size: 2rem;
+        padding-bottom: 1rem;
     }
     &__photos {
         display: flex;
@@ -65,7 +67,7 @@
 
     &__item {
         width: 100%;
-        padding: 1rem 0;
+        padding-bottom: 1rem;
     }
 }
 
