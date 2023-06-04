@@ -69,14 +69,19 @@ html {
     font-size: $font-size;
 }
 
-.description__text {
+.description__text, .header__links {
     @include regular-text(black, 1rem)
 }
 
-.gallery__title {
-    @include demi-text(black, 2rem)
+.gallery__title, .about__title, .footer__title, .hero__title, .header__title {
+    @include bold-text(black, 1.5rem);
+    line-height: 32px;
 }
 
 .description__subtitle {
     @include demi-text(black, 1rem)
+}
+
+.about__qoute, .about__qoute-author {
+    @include bold-text(black, 1rem)
 }

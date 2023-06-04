@@ -1,8 +1,28 @@
 @use "./partials/resets" as *;
 @use "./partials/fonts" as *;
 
+.header {
+    display: flex;
+    flex-direction: column;
+    background-color:#323232;
+    padding: 1rem 0;
+
+    &__image {
+        align-self: center;
+        width: 120px;
+    }
+
+    &__links {
+        list-style: none;
+        display: flex;
+        justify-content: space-around;
+        padding-top: 1rem;
+        color: white;
+    }
+}
+
 .hero {
-    background-image: url("../assets/images/hero-bio.jpg");
+    background-image:linear-gradient( hsla(0, 0%, 20%, 0.5), hsl(0, 0%, 20%,0.5)), url("../assets/images/hero-bio.jpg");
     background-size: cover;
     background-position: center;
     height: 25vh;
@@ -12,7 +32,7 @@
         color: white;
         align-self: center;
         padding-left: 1rem;
-        font-size: 2rem ;
+        // font-size: 2rem ;
     }
 }
 
@@ -22,7 +42,7 @@
     padding-right: 1rem;
 
     &__title {
-        font-size: 2rem;
+        // font-size: 2rem;
     }
 
     &__image {
@@ -48,6 +68,11 @@
     &__subtitle {
         padding-bottom: 1rem;
     }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 .gallery {
@@ -57,7 +82,7 @@
     background-color:#FAFAFA;
 
     &__title {
-        font-size: 2rem;
+        // font-size: 2rem;
         padding-bottom: 1rem;
     }
     &__photos {
@@ -78,10 +103,11 @@
     padding-right: 1rem;
     display: flex;
     flex-direction: column;
+    color: white;
 
     &__title {
         color: white;
-        font-size: 2rem;
+        // font-size: 2rem;
         padding-bottom: 1rem;
     }
 

@@ -51,7 +51,7 @@ h1 {
   font-style: normal;
   font-weight: 700;
 }
-.description__text {
+.description__text, .header__links {
   font-family: AvenirNext;
   font-style: normal;
   font-weight: 400;
@@ -59,12 +59,13 @@ h1 {
   font-size: 1rem;
 }
 
-.gallery__title {
+.gallery__title, .about__title, .footer__title, .hero__title, .header__title {
   font-family: AvenirNext;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 700;
   color: black;
-  font-size: 2rem;
+  font-size: 1.5rem;
+  line-height: 32px;
 }
 
 .description__subtitle {
@@ -75,8 +76,34 @@ h1 {
   font-size: 1rem;
 }
 
+.about__qoute, .about__qoute-author {
+  font-family: AvenirNext;
+  font-style: normal;
+  font-weight: 700;
+  color: black;
+  font-size: 1rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  background-color: #323232;
+  padding: 1rem 0;
+}
+.header__image {
+  align-self: center;
+  width: 120px;
+}
+.header__links {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 1rem;
+  color: white;
+}
+
 .hero {
-  background-image: url("../assets/images/hero-bio.jpg");
+  background-image: linear-gradient(hsla(0, 0%, 20%, 0.5), hsla(0, 0%, 20%, 0.5)), url("../assets/images/hero-bio.jpg");
   background-size: cover;
   background-position: center;
   height: 25vh;
@@ -86,16 +113,12 @@ h1 {
   color: white;
   align-self: center;
   padding-left: 1rem;
-  font-size: 2rem;
 }
 
 .about {
   padding-top: 1.5rem;
   padding-left: 1rem;
   padding-right: 1rem;
-}
-.about__title {
-  font-size: 2rem;
 }
 .about__image {
   width: 100%;
@@ -117,6 +140,10 @@ h1 {
 .description__subtitle {
   padding-bottom: 1rem;
 }
+.description__text {
+  display: flex;
+  flex-direction: column;
+}
 
 .gallery {
   padding-top: 1.5rem;
@@ -125,7 +152,6 @@ h1 {
   background-color: #FAFAFA;
 }
 .gallery__title {
-  font-size: 2rem;
   padding-bottom: 1rem;
 }
 .gallery__photos {
@@ -144,10 +170,10 @@ h1 {
   padding-right: 1rem;
   display: flex;
   flex-direction: column;
+  color: white;
 }
 .footer__title {
   color: white;
-  font-size: 2rem;
   padding-bottom: 1rem;
 }
 .footer__icons {
