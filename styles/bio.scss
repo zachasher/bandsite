@@ -1,122 +1,142 @@
 @use "./partials/resets" as *;
 @use "./partials/fonts" as *;
+@use "./partials/variables" as*;
 
 .header {
+  display: flex;
+  flex-direction: column;
+  background-color: $bandsite-black;
+  padding: 1rem 0;
+
+  &__image {
+    align-self: center;
+    width: 120px;
+  }
+
+  &__links {
+    list-style: none;
     display: flex;
-    flex-direction: column;
-    background-color:#323232;
-    padding: 1rem 0;
-
-    &__image {
-        align-self: center;
-        width: 120px;
-    }
-
-    &__links {
-        list-style: none;
-        display: flex;
-        justify-content: space-around;
-        padding-top: 1rem;
-        color: white;
-    }
+    justify-content: space-around;
+    padding-top: 1rem;
+    color: white;
+  }
 }
 
 .hero {
-    background-image:linear-gradient( hsla(0, 0%, 20%, 0.5), hsl(0, 0%, 20%,0.5)), url("../assets/images/hero-bio.jpg");
-    background-size: cover;
-    background-position: center;
-    height: 25vh;
-    display: flex;
+  background-image: linear-gradient(hsla(0, 0%, 20%, 0.5), hsl(0, 0%, 20%, 0.5)),
+    url("../assets/images/hero-bio.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 25vh;
+  display: flex;
 
-    &__title {
-        color: white;
-        align-self: center;
-        padding-left: 1rem;
-        // font-size: 2rem ;
-    }
+  &__title {
+    color: white;
+    align-self: center;
+    padding-left: 1rem;
+    // font-size: 2rem ;
+  }
 }
 
 .about {
-    padding-top: 1.5rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
+  padding-top: 1.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 
-    &__title {
-        // font-size: 2rem;
-    }
+  &__title {
+    // font-size: 2rem;
+  }
 
-    &__image {
-        width: 100%;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-    }
+  &__image {
+    width: 100%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
 
-    &__qoute {
-       line-height: 1.5;
-    }
+  &__qoute {
+    line-height: 1.5;
+  }
 
-    &__qoute-author {
-       line-height: 1.5;
-    }
+  &__qoute-author {
+    line-height: 1.5;
+  }
 }
 
 .description {
-    padding-top: 1.5rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
+  padding-top: 1.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 
-    &__subtitle {
-        padding-bottom: 1rem;
-    }
+  &__subtitle {
+    padding-bottom: 1rem;
+  }
 
-    &__text {
-        display: flex;
-        flex-direction: column;
-    }
+  &__text {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .gallery {
-    padding-top: 1.5rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    background-color:#FAFAFA;
+  padding-top: 1.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: #fafafa;
 
-    &__title {
-        // font-size: 2rem;
-        padding-bottom: 1rem;
-    }
-    &__photos {
-        display: flex;
-        flex-direction: column;
-    }
+  &__title {
+    // font-size: 2rem;
+    padding-bottom: 1rem;
+  }
+  &__photos {
+    display: flex;
+    flex-direction: column;
+  }
 
-    &__item {
-        width: 100%;
-        padding-bottom: 1rem;
-    }
+  &__item {
+    width: 100%;
+    padding-bottom: 1rem;
+  }
 }
 
 .footer {
-    background-color: #323232;
-    padding-top: 1.5rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    display: flex;
-    flex-direction: column;
+  background-color: #323232;
+  padding-top: 1.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: flex;
+  flex-direction: column;
+  color: white;
+
+  &__title {
     color: white;
+    // font-size: 2rem;
+    padding-bottom: 1rem;
+  }
 
-    &__title {
-        color: white;
-        // font-size: 2rem;
-        padding-bottom: 1rem;
-    }
+  &__icons {
+    // padding-bottom: 1rem;
+  }
 
-    &__icons {
-        padding-bottom: 1rem;
-    }
+  &__icon {
+    padding-right: 1rem;
+  }
 
-    &__contact {
-        margin-bottom: 1.5rem;
-        color: white;
-    }
+  &__contact {
+    padding-bottom: 2rem;
+  }
+  
+  &__copy {
+    margin-bottom: 1.5rem;
+    color: white;
+  }
+
+  &__logo1 {
+    width: 120px;
+    visibility: hidden;
+  }
+
+  &__logo2 {
+    width: 120px;
+    padding: 1rem 0;
+  }
 }

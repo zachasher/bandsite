@@ -51,11 +51,11 @@ h1 {
   font-style: normal;
   font-weight: 700;
 }
-.description__text, .header__links {
+.description__text, .header__links, .footer__copy {
   font-family: AvenirNext;
   font-style: normal;
   font-weight: 400;
-  color: black;
+  color: #323232;
   font-size: 1rem;
 }
 
@@ -63,7 +63,7 @@ h1 {
   font-family: AvenirNext;
   font-style: normal;
   font-weight: 700;
-  color: black;
+  color: #323232;
   font-size: 1.5rem;
   line-height: 32px;
 }
@@ -72,7 +72,7 @@ h1 {
   font-family: AvenirNext;
   font-style: normal;
   font-weight: 600;
-  color: black;
+  color: #323232;
   font-size: 1rem;
 }
 
@@ -80,7 +80,7 @@ h1 {
   font-family: AvenirNext;
   font-style: normal;
   font-weight: 700;
-  color: black;
+  color: #323232;
   font-size: 1rem;
 }
 
@@ -149,7 +149,7 @@ h1 {
   padding-top: 1.5rem;
   padding-left: 1rem;
   padding-right: 1rem;
-  background-color: #FAFAFA;
+  background-color: #fafafa;
 }
 .gallery__title {
   padding-bottom: 1rem;
@@ -176,10 +176,21 @@ h1 {
   color: white;
   padding-bottom: 1rem;
 }
-.footer__icons {
-  padding-bottom: 1rem;
+.footer__icon {
+  padding-right: 1rem;
 }
 .footer__contact {
+  padding-bottom: 2rem;
+}
+.footer__copy {
   margin-bottom: 1.5rem;
   color: white;
+}
+.footer__logo1 {
+  width: 120px;
+  visibility: hidden;
+}
+.footer__logo2 {
+  width: 120px;
+  padding: 1rem 0;
 }/*# sourceMappingURL=bio.css.map */
