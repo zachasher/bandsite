@@ -2,27 +2,28 @@
 
 //Font Size Resets
 html {
-    font-size: 100%;
+    // font-size: 100%;
+    font-size: 16px;
   }
-  p,
-  h6 {
-    font-size: 1rem;
-  }
-  h5 {
-    font-size: 1.4rem;
-  }
-  h4 {
-    font-size: 1.96rem;
-  }
-  h3 {
-    font-size: 2.74rem;
-  }
-  h2 {
-    font-size: 3.84rem;
-  }
-  h1 {
-    font-size: 5.38rem;
-  }
+  // p,
+  // h6 {
+  //   font-size: 1rem;
+  // }
+  // h5 {
+  //   font-size: 1.4rem;
+  // }
+  // h4 {
+  //   font-size: 1.96rem;
+  // }
+  // h3 {
+  //   font-size: 2.74rem;
+  // }
+  // h2 {
+  //   font-size: 3.84rem;
+  // }
+  // h1 {
+  //   font-size: 5.38rem;
+  // }
 
 //Importing Fonts
 @font-face {
@@ -46,7 +47,7 @@ html {
   font-weight: 700;
 }
 
-
+// Setting Text Styles
 @mixin regular-text($color, $font-size) {
     font-family: AvenirNext;
     font-style: normal;
@@ -71,19 +72,85 @@ html {
     font-size: $font-size;
 }
 
-.description__text, .header__links, .footer__copy {
-    @include regular-text($bandsite-black, 1rem)
+// .description__text, .header__links, .footer__copy {
+//     @include regular-text($bandsite-black, 1rem)
+// }
+
+// // .gallery__title, 
+
+// .about__title, .footer__title, .hero__title, .header__title {
+//     @include bold-text($bandsite-black, 1.5rem);
+//     line-height: 32px;
+// }
+
+// .description__subtitle {
+//     @include demi-text($bandsite-black, 1rem)
+// }
+
+// .about__qoute, .about__qoute-author {
+//     @include bold-text($bandsite-black, 1rem)
+// }
+
+
+//Text Styles
+//Mobile
+@mixin mobile-page-header {
+  @include bold-text($bandsite-white, 1.5rem);
+  line-height: 2rem;
 }
 
-.gallery__title, .about__title, .footer__title, .hero__title, .header__title {
-    @include bold-text($bandsite-black, 1.5rem);
-    line-height: 32px;
+@mixin mobile-section-header {
+  @include bold-text($bandsite-black, 1.5rem);
+  line-height: 2rem;
 }
 
-.description__subtitle {
-    @include demi-text($bandsite-black, 1rem)
+@mixin mobile-subheader {
+  @include demi-text($bandsite-black, 0.875rem);
+  line-height: 1.375rem;
 }
 
-.about__qoute, .about__qoute-author {
-    @include bold-text($bandsite-black, 1rem)
+@mixin mobile-body-copy {
+  @include regular-text($bandsite-black, 0.8125rem);
+  line-height: 1.125rem;
+}
+
+@mixin mobile-footer-copy {
+  @include regular-text($bandsite-white, 0.8125rem);
+  line-height: 1.125rem;
+}
+
+@mixin mobile-label-button {
+  @include bold-text($bandsite-black, 0.625rem);
+  line-height: 1.25rem;
+}
+
+//Desktop & Tablet
+@mixin tablet-page-header {
+  @include bold-text($bandsite-white, 3.75rem);
+  line-height: 4.25rem;
+}
+
+@mixin tablet-section-header {
+  @include bold-text($bandsite-black, 2.25rem);
+  line-height: 2.75rem;
+}
+
+@mixin tablet-subheader {
+  @include demi-text($bandsite-black, 1.5rem);
+  line-height:2rem;
+}
+
+@mixin tablet-body-copy {
+  @include regular-text($bandsite-black, 0.875rem);
+  line-height: 1.375rem;
+}
+
+@mixin tablet-footer-copy {
+  @include regular-text($bandsite-white, 0.875rem);
+  line-height: 1.25rem;
+}
+
+@mixin tablet-label-button {
+  @include bold-text($bandsite-black, 0.75rem);
+  line-height: 1.25rem;
 }

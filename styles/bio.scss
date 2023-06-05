@@ -1,6 +1,7 @@
 @use "./partials/resets" as *;
 @use "./partials/fonts" as *;
-@use "./partials/variables" as*;
+@use "./partials/variables" as *;
+@use "./partials/breakpoints" as *;
 
 .header {
   display: flex;
@@ -8,9 +9,20 @@
   background-color: $bandsite-black;
   padding: 1rem 0;
 
+  @include media-tablet {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
   &__image {
     align-self: center;
     width: 120px;
+
+    @include media-tablet {
+      margin: 0.5rem 2.25rem;
+    }
   }
 
   &__links {
@@ -18,7 +30,18 @@
     display: flex;
     justify-content: space-around;
     padding-top: 1rem;
+    @include mobile-body-copy;
     color: white;
+
+    @include media-tablet {
+      padding: 0;
+    }
+  }
+
+  &__links li {
+    @include media-tablet {
+      padding: 0 1.5rem;
+    }
   }
 }
 
@@ -30,11 +53,19 @@
   height: 25vh;
   display: flex;
 
+  @include media-tablet {
+    height: 33vh;
+  }
+
   &__title {
-    color: white;
     align-self: center;
     padding-left: 1rem;
-    // font-size: 2rem ;
+    @include mobile-page-header;
+
+    @include media-tablet {
+      @include tablet-page-header;
+      padding-left: 2.25rem;
+    }
   }
 }
 
@@ -43,22 +74,50 @@
   padding-left: 1rem;
   padding-right: 1rem;
 
+  @include media-tablet {
+    padding: 36px;
+  }
+
   &__title {
-    // font-size: 2rem;
+    @include mobile-section-header;
+
+    @include media-tablet {
+      @include tablet-section-header;
+    }
   }
 
   &__image {
     width: 100%;
     padding-top: 1rem;
     padding-bottom: 1rem;
+
+    @include media-tablet {
+      padding: 36px;
+    }
   }
 
   &__qoute {
-    line-height: 1.5;
+    @include mobile-subheader;
+    line-height: 1.5rem;;
+
+    @include media-tablet {
+      padding: 0 36px;
+      @include tablet-subheader;
+      line-height: 2rem;
+    }
   }
 
   &__qoute-author {
-    line-height: 1.5;
+    @include mobile-subheader;
+    line-height: 1.5rem;
+
+    @include media-tablet {
+      padding-left: 36px;
+      @include tablet-body-copy;
+      line-height: 2rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
   }
 }
 
@@ -66,14 +125,30 @@
   padding-top: 1.5rem;
   padding-left: 1rem;
   padding-right: 1rem;
+  padding-bottom: 1rem;
+
+  @include media-tablet {
+    padding: 36px 72px;
+  }
 
   &__subtitle {
     padding-bottom: 1rem;
+    @include mobile-subheader;
+
+    @include media-tablet {
+      @include tablet-subheader;
+    }
   }
 
   &__text {
     display: flex;
     flex-direction: column;
+    @include mobile-body-copy;
+
+    @include media-tablet {
+      flex-direction: row;
+      @include tablet-body-copy;
+    }
   }
 }
 
@@ -83,18 +158,41 @@
   padding-right: 1rem;
   background-color: #fafafa;
 
-  &__title {
-    // font-size: 2rem;
-    padding-bottom: 1rem;
+  @include media-tablet {
+    padding: 36px 24px;
   }
+
+  &__title {
+    padding-bottom: 1rem;
+    @include mobile-section-header;
+
+    @include media-tablet {
+      padding-bottom: 24px;
+      padding-left: 12px;
+      padding-top: 12px;
+      @include tablet-section-header;
+    }
+  }
+
   &__photos {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+
+    @include media-tablet {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
   }
 
   &__item {
     width: 100%;
     padding-bottom: 1rem;
+
+    @include media-tablet {
+      width: 33%;
+      padding: 12px;
+    }
   }
 }
 
@@ -107,14 +205,39 @@
   flex-direction: column;
   color: white;
 
+  @include media-tablet {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 2.25rem;
+  }
+
+  &__one {
+    @include media-tablet {
+      display: flex;
+      align-items: center;
+    }
+  }
+
   &__title {
-    color: white;
-    // font-size: 2rem;
     padding-bottom: 1rem;
+    @include mobile-section-header;
+    color: white;
+
+    @include media-tablet {
+      padding-right: 2.25rem;
+      padding-bottom: 0;
+      @include tablet-section-header;
+      color: white;
+    }
   }
 
   &__icons {
-    // padding-bottom: 1rem;
+    padding-bottom: 1rem;
+
+    @include media-tablet {
+      padding: 0;
+    }
   }
 
   &__icon {
@@ -123,20 +246,41 @@
 
   &__contact {
     padding-bottom: 2rem;
+
+    @include media-tablet {
+      display: flex;
+      padding: 2.25rem 0;
+    }
   }
-  
+
   &__copy {
     margin-bottom: 1.5rem;
     color: white;
+    @include mobile-footer-copy;
+
+    @include media-tablet {
+      padding-right: 36px;
+      @include tablet-footer-copy;
+    }
   }
 
   &__logo1 {
     width: 120px;
-    visibility: hidden;
+    display: none;
+
+    @include media-tablet {
+      display: flex;
+      position: absolute;
+      right: 36px;
+    }
   }
 
   &__logo2 {
     width: 120px;
     padding: 1rem 0;
+
+    @include media-tablet {
+      display: none;
+    }
   }
 }
