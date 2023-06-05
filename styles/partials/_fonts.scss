@@ -5,25 +5,6 @@ html {
     // font-size: 100%;
     font-size: 16px;
   }
-  // p,
-  // h6 {
-  //   font-size: 1rem;
-  // }
-  // h5 {
-  //   font-size: 1.4rem;
-  // }
-  // h4 {
-  //   font-size: 1.96rem;
-  // }
-  // h3 {
-  //   font-size: 2.74rem;
-  // }
-  // h2 {
-  //   font-size: 3.84rem;
-  // }
-  // h1 {
-  //   font-size: 5.38rem;
-  // }
 
 //Importing Fonts
 @font-face {
@@ -71,26 +52,6 @@ html {
     color: $color;
     font-size: $font-size;
 }
-
-// .description__text, .header__links, .footer__copy {
-//     @include regular-text($bandsite-black, 1rem)
-// }
-
-// // .gallery__title, 
-
-// .about__title, .footer__title, .hero__title, .header__title {
-//     @include bold-text($bandsite-black, 1.5rem);
-//     line-height: 32px;
-// }
-
-// .description__subtitle {
-//     @include demi-text($bandsite-black, 1rem)
-// }
-
-// .about__qoute, .about__qoute-author {
-//     @include bold-text($bandsite-black, 1rem)
-// }
-
 
 //Text Styles
 //Mobile
