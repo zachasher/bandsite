@@ -49,6 +49,14 @@ html {
     margin: 0.5rem 2.25rem;
   }
 }
+@media (min-width: 1280px) {
+  .header__image {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    margin-left: 5rem;
+    margin-right: 2.25rem;
+  }
+}
 .header__links {
   list-style: none;
   display: flex;
@@ -106,6 +114,11 @@ html {
     padding-left: 2.25rem;
   }
 }
+@media (min-width: 1280px) {
+  .hero__title {
+    padding-left: 5rem;
+  }
+}
 
 .about {
   padding-top: 1.5rem;
@@ -114,7 +127,12 @@ html {
 }
 @media (min-width: 768px) {
   .about {
-    padding: 36px;
+    padding: 2.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .about {
+    padding: 2.25rem 5rem;
   }
 }
 .about__title {
@@ -133,6 +151,7 @@ html {
     color: #323232;
     font-size: 2.25rem;
     line-height: 2.75rem;
+    padding-top: 0.75rem;
   }
 }
 .about__image {
@@ -142,7 +161,12 @@ html {
 }
 @media (min-width: 768px) {
   .about__image {
-    padding: 36px;
+    padding: 2.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .about__image {
+    padding: 2.25rem 5rem;
   }
 }
 .about__qoute {
@@ -156,7 +180,7 @@ html {
 }
 @media (min-width: 768px) {
   .about__qoute {
-    padding: 0 36px;
+    padding: 1rem 2.25rem;
     font-family: AvenirNext;
     font-style: normal;
     font-weight: 600;
@@ -164,6 +188,11 @@ html {
     font-size: 1.5rem;
     line-height: 2rem;
     line-height: 2rem;
+  }
+}
+@media (min-width: 1280px) {
+  .about__qoute {
+    padding: 1rem 5rem;
   }
 }
 .about__qoute-author {
@@ -177,7 +206,7 @@ html {
 }
 @media (min-width: 768px) {
   .about__qoute-author {
-    padding-left: 36px;
+    padding-left: 2.25rem;
     font-family: AvenirNext;
     font-style: normal;
     font-weight: 400;
@@ -189,6 +218,11 @@ html {
     font-weight: 600;
   }
 }
+@media (min-width: 1280px) {
+  .about__qoute-author {
+    padding-left: 5rem;
+  }
+}
 
 .description {
   padding-top: 1.5rem;
@@ -198,7 +232,16 @@ html {
 }
 @media (min-width: 768px) {
   .description {
-    padding: 36px 72px;
+    padding-top: 0;
+    padding-right: 4.5rem;
+    padding-bottom: 2.25rem;
+    padding-left: 4.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .description {
+    padding-left: 10rem;
+    padding-right: 10rem;
   }
 }
 .description__subtitle {
@@ -242,6 +285,18 @@ html {
   }
 }
 
+@media (min-width: 768px) {
+  .description__text :first-child {
+    padding-right: 1.125rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .description__text :nth-child(3) {
+    padding-left: 1.125rem;
+  }
+}
+
 .gallery {
   padding-top: 1.5rem;
   padding-left: 1rem;
@@ -250,7 +305,12 @@ html {
 }
 @media (min-width: 768px) {
   .gallery {
-    padding: 36px 24px;
+    padding: 2.25rem 1.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .gallery {
+    padding: 2.25rem 4.25rem;
   }
 }
 .gallery__title {
@@ -264,9 +324,9 @@ html {
 }
 @media (min-width: 768px) {
   .gallery__title {
-    padding-bottom: 24px;
-    padding-left: 12px;
-    padding-top: 12px;
+    padding-bottom: 1.5rem;
+    padding-left: 0.75rem;
+    padding-top: 0.75rem;
     font-family: AvenirNext;
     font-style: normal;
     font-weight: 700;
@@ -293,7 +353,7 @@ html {
 @media (min-width: 768px) {
   .gallery__item {
     width: 33%;
-    padding: 12px;
+    padding: 0.75rem;
   }
 }
 
@@ -308,10 +368,13 @@ html {
 }
 @media (min-width: 768px) {
   .footer {
-    flex-direction: row;
     flex-wrap: wrap;
-    align-items: center;
     padding: 2.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .footer {
+    padding: 2.25rem 5rem;
   }
 }
 @media (min-width: 768px) {
@@ -375,7 +438,7 @@ html {
 }
 @media (min-width: 768px) {
   .footer__copy {
-    padding-right: 36px;
+    padding-right: 2.25rem;
     font-family: AvenirNext;
     font-style: normal;
     font-weight: 400;
@@ -392,7 +455,7 @@ html {
   .footer__logo1 {
     display: flex;
     position: absolute;
-    right: 36px;
+    right: 2.25rem;
   }
 }
 .footer__logo2 {
