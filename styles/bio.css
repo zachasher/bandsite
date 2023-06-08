@@ -15,20 +15,20 @@ html {
 }
 
 @font-face {
-  font-family: AvenirNext;
-  src: url("/assets/fonts/AvenirNextLTPro-Regular.otf") format("OpenType");
+  font-family: "AvenirNext";
+  src: url("../assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype"), url("../assets/fonts/AvenirNextLTPro.ttf") format("truetype");
   font-style: normal;
   font-weight: 400;
 }
 @font-face {
-  font-family: AvenirNext;
-  src: url("/assets/fonts/AvenirNextLTPro-Demi.otf") format("OpenType");
+  font-family: "AvenirNext";
+  src: url("../assets/fonts/AvenirNextLTPro-Demi.otf") format("OpenType");
   font-style: normal;
   font-weight: 600;
 }
 @font-face {
-  font-family: AvenirNext;
-  src: url("/assets/fonts/AvenirNextLTPro-Bold.otf") format("OpenType");
+  font-family: "AvenirNext";
+  src: url("../assets/fonts/AvenirNextLTPro-Bold.otf") format("OpenType");
   font-style: normal;
   font-weight: 700;
 }
@@ -70,7 +70,7 @@ html {
   list-style: none;
   display: flex;
   justify-content: space-around;
-  font-family: AvenirNext;
+  font-family: "AvenirNext";
   font-style: normal;
   font-weight: 400;
   color: #323232;
@@ -223,7 +223,7 @@ html {
 @media (min-width: 768px) {
   .about__qoute-author {
     padding-left: 2.25rem;
-    font-family: AvenirNext;
+    font-family: "AvenirNext";
     font-style: normal;
     font-weight: 400;
     color: #323232;
@@ -282,7 +282,7 @@ html {
 .description__text {
   display: flex;
   flex-direction: column;
-  font-family: AvenirNext;
+  font-family: "AvenirNext";
   font-style: normal;
   font-weight: 400;
   color: #323232;
@@ -292,7 +292,7 @@ html {
 @media (min-width: 768px) {
   .description__text {
     flex-direction: row;
-    font-family: AvenirNext;
+    font-family: "AvenirNext";
     font-style: normal;
     font-weight: 400;
     color: #323232;
@@ -457,7 +457,7 @@ html {
 .footer__copy {
   margin-bottom: 1.5rem;
   color: white;
-  font-family: AvenirNext;
+  font-family: "AvenirNext";
   font-style: normal;
   font-weight: 400;
   color: #FFFFFF;
@@ -467,13 +467,16 @@ html {
 @media (min-width: 768px) {
   .footer__copy {
     padding-right: 2.25rem;
-    font-family: AvenirNext;
+    font-family: "AvenirNext";
     font-style: normal;
     font-weight: 400;
     color: #FFFFFF;
     font-size: 0.875rem;
     line-height: 1.25rem;
   }
+}
+.footer__copy--bold {
+  font-weight: 600;
 }
 .footer__logo1 {
   width: 120px;
@@ -484,6 +487,13 @@ html {
     display: flex;
     position: absolute;
     right: 2.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .footer__logo1 {
+    display: flex;
+    position: absolute;
+    right: 5rem;
   }
 }
 .footer__logo2 {

@@ -2,55 +2,56 @@
 
 //Font Size Resets
 html {
-    // font-size: 100%;
-    font-size: 16px;
-  }
+  // font-size: 100%;
+  font-size: 16px;
+}
 
 //Importing Fonts
 @font-face {
-  font-family: AvenirNext;
-  src: url("/assets/fonts/AvenirNextLTPro-Regular.otf") format("OpenType");
+  font-family: "AvenirNext";
+  src: url("../assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype"), 
+  url("../assets/fonts/AvenirNextLTPro.ttf") format("truetype");
   font-style: normal;
   font-weight: 400;
 }
 
 @font-face {
-  font-family: AvenirNext;
-  src: url("/assets/fonts/AvenirNextLTPro-Demi.otf") format("OpenType");
+  font-family: "AvenirNext";
+  src: url("../assets/fonts/AvenirNextLTPro-Demi.otf") format("OpenType");
   font-style: normal;
   font-weight: 600;
 }
 
 @font-face {
-  font-family: AvenirNext;
-  src: url("/assets/fonts/AvenirNextLTPro-Bold.otf") format("OpenType");
+  font-family: "AvenirNext";
+  src: url("../assets/fonts/AvenirNextLTPro-Bold.otf") format("OpenType");
   font-style: normal;
   font-weight: 700;
 }
 
 // Setting Text Styles
 @mixin regular-text($color, $font-size) {
-    font-family: AvenirNext;
-    font-style: normal;
-    font-weight: 400;
-    color: $color;
-    font-size: $font-size;
+  font-family: "AvenirNext";
+  font-style: normal;
+  font-weight: 400;
+  color: $color;
+  font-size: $font-size;
 }
 
 @mixin demi-text($color, $font-size) {
-    font-family: AvenirNext;
-    font-style: normal;
-    font-weight: 600;
-    color: $color;
-    font-size: $font-size;
+  font-family: AvenirNext;
+  font-style: normal;
+  font-weight: 600;
+  color: $color;
+  font-size: $font-size;
 }
 
 @mixin bold-text($color, $font-size) {
-    font-family: AvenirNext;
-    font-style: normal;
-    font-weight: 700;
-    color: $color;
-    font-size: $font-size;
+  font-family: AvenirNext;
+  font-style: normal;
+  font-weight: 700;
+  color: $color;
+  font-size: $font-size;
 }
 
 //Text Styles
@@ -98,7 +99,7 @@ html {
 
 @mixin tablet-subheader {
   @include demi-text($bandsite-black, 1.5rem);
-  line-height:2rem;
+  line-height: 2rem;
 }
 
 @mixin tablet-body-copy {
