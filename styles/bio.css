@@ -16,23 +16,23 @@ html {
 
 @font-face {
   font-family: "AvenirNext";
-  src: url("../assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype"), url("../assets/fonts/AvenirNextLTPro.ttf") format("truetype");
+  src: url("/assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype"), url("/assets/fonts/AvenirNextLTPro.ttf") format("truetype");
   font-style: normal;
   font-weight: 400;
 }
 @font-face {
   font-family: "AvenirNext";
-  src: url("../assets/fonts/AvenirNextLTPro-Demi.otf") format("OpenType");
+  src: url("/assets/fonts/AvenirNextLTPro-Demi.otf") format("opentype"), url("/assets/fonts/AvenirNextLTProDemi.ttf") format("truetype");
   font-style: normal;
   font-weight: 600;
 }
 @font-face {
   font-family: "AvenirNext";
-  src: url("../assets/fonts/AvenirNextLTPro-Bold.otf") format("OpenType");
+  src: url("/assets/fonts/AvenirNextLTPro-Bold.otf") format("OpenType"), url("/assets/fonts/AvenirNextLTProBold.ttf") format("truetype");
   font-style: normal;
   font-weight: 700;
 }
-.header {
+.nav-bar {
   position: sticky;
   top: 0;
   z-index: 1;
@@ -41,32 +41,32 @@ html {
   background-color: #323232;
 }
 @media (min-width: 768px) {
-  .header {
+  .nav-bar {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
   }
 }
-.header__image {
+.nav-bar__image {
   align-self: center;
   width: 120px;
   margin-top: 1rem;
 }
 @media (min-width: 768px) {
-  .header__image {
+  .nav-bar__image {
     margin: 0.5rem 2.25rem;
   }
 }
 @media (min-width: 1280px) {
-  .header__image {
+  .nav-bar__image {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
     margin-left: 5rem;
     margin-right: 2.25rem;
   }
 }
-.header__links {
+.nav-bar__links {
   list-style: none;
   display: flex;
   justify-content: space-around;
@@ -76,25 +76,29 @@ html {
   color: #323232;
   font-size: 0.8125rem;
   line-height: 1.125rem;
-  color: white;
+  color: #E1E1E1;
 }
-.header__links li {
+.nav-bar__links li {
   display: flex;
   width: 50%;
   padding: 1rem 1.5rem;
   justify-content: center;
 }
 @media (min-width: 768px) {
-  .header__links li {
-    padding: 1.5rem 1.5rem;
+  .nav-bar__links li {
+    margin: 0 1.5rem;
+    padding: 1.5rem 0;
   }
 }
-.header__links li:hover {
-  border-bottom: 5px solid lightblue;
+.nav-bar__links li:hover {
+  border-bottom: 5px solid #FFFFFF;
+  color: #FFFFFF;
 }
 
 .active-link {
-  border-bottom: 5px solid white;
+  border-bottom: 5px solid #FFFFFF;
+  color: #FFFFFF;
+  font-weight: bold;
 }
 
 .hero {
@@ -140,6 +144,7 @@ html {
   padding-top: 1.5rem;
   padding-left: 1rem;
   padding-right: 1rem;
+  background-color: #FFFFFF;
 }
 @media (min-width: 768px) {
   .about {
@@ -245,6 +250,7 @@ html {
   padding-left: 1rem;
   padding-right: 1rem;
   padding-bottom: 1rem;
+  background-color: #FFFFFF;
 }
 @media (min-width: 768px) {
   .description {
