@@ -1,0 +1,107 @@
+@use "./resets" as *;
+@use "./fonts" as *;
+@use "./variables" as *;
+@use "./breakpoints" as *;
+
+.footer {
+    background-color: $bandsite-black;
+    padding-top: 1.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    display: flex;
+    flex-direction: column;
+    color: $bandsite-white;
+  
+    @include media-tablet {
+      flex-wrap: wrap;
+      padding: 2.25rem;
+    }
+  
+    @include media-desktop {
+      padding: 2.25rem 5rem;
+    }
+  
+    &__one {
+      @include media-tablet {
+        display: flex;
+        align-items: center;
+      }
+    }
+  
+    &__title {
+      padding-bottom: 1rem;
+      @include mobile-section-header;
+      color: $bandsite-white;
+  
+      @include media-tablet {
+        padding-right: 2rem;
+        padding-bottom: 0;
+        @include tablet-section-header;
+        color: $bandsite-white;
+      }
+    }
+  
+    &__icons {
+      padding-bottom: 1rem;
+  
+      @include media-tablet {
+        padding: 0;
+      }
+    }
+  
+    &__icon {
+      padding-right: 1.5rem;
+      scale: 1.1;
+    }
+  
+    &__contact {
+      padding-bottom: 2rem;
+  
+      @include media-tablet {
+        display: flex;
+        padding: 2.25rem 0;
+      }
+    }
+  
+    &__copy {
+      margin-bottom: 1.5rem;
+      color: $bandsite-white;
+      @include mobile-footer-copy;
+  
+      @include media-tablet {
+        // padding-right: 2.25rem;
+        padding-right: 3rem;
+        @include tablet-footer-copy;
+      }
+    }
+  
+    &__copy--bold {
+      font-weight: 600;
+    }
+  
+    &__logo1 {
+      width: 120px;
+      display: none;
+  
+      @include media-tablet {
+        display: flex;
+        position: absolute;
+        right: 2.25rem;
+      }
+  
+      @include media-desktop {
+        display: flex;
+        position: absolute;
+        right: 5rem;
+      }
+    }
+  
+    &__logo2 {
+      width: 120px;
+      padding: 1rem 0;
+  
+      @include media-tablet {
+        display: none;
+      }
+    }
+  }

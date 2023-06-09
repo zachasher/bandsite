@@ -1,0 +1,68 @@
+@use "./resets" as *;
+@use "./fonts" as *;
+@use "./variables" as *;
+@use "./breakpoints" as *;
+
+.nav-bar {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: $bandsite-black;
+
+  @include media-tablet {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  &__image {
+    align-self: center;
+    width: 120px;
+    margin-top: 1rem;
+
+    @include media-tablet {
+      margin: 0.5rem 2.25rem;
+    }
+
+    @include media-desktop {
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+      margin-left: 5rem;
+      margin-right: 2.25rem;
+    }
+  }
+
+  &__links {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    @include mobile-body-copy;
+    color: $bandsite-mercury;
+  }
+
+  &__links li {
+    display: flex;
+    width: 50%;
+    padding: 1rem 1.5rem;
+    justify-content: center;
+
+    @include media-tablet {
+      margin: 0 1.5rem;
+      padding: 1.5rem 0;
+    }
+  }
+
+  &__links li:hover {
+    border-bottom: 5px solid $bandsite-white;
+    color: $bandsite-white;
+  }
+}
+
+.active-link {
+  border-bottom: 5px solid $bandsite-white;
+  color: $bandsite-white;
+  font-weight: bold;
+}
