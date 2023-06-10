@@ -1,0 +1,51 @@
+@use "./partials/resets" as *;
+@use "./partials/fonts" as *;
+@use "./partials/variables" as *;
+@use "./partials/breakpoints" as *;
+@use "./partials/navbar" as *;
+@use "./partials/footer" as *;
+
+.hero {
+  background-image: linear-gradient(hsla(0, 0%, 20%, 0.5), hsl(0, 0%, 20%, 0.5)),
+    url("/assets/images/hero-shows.jpg");
+  background-size: cover;
+  background-position: center;
+//   height: 40vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  align-content: left;
+  padding: 2rem 1rem 1rem 1rem;
+
+  @include media-tablet {
+    // height: 35vh;
+    padding: 2rem 2rem 2rem 2rem;
+  }
+
+  &__subtitle {
+    @include mobile-body-copy;
+    color: $bandsite-white;
+    padding-bottom: 1rem;
+  }
+
+  &__title {
+    padding-bottom: 1rem;
+    @include mobile-page-header;
+
+    @include media-tablet {
+      @include tablet-page-header;
+      padding-right: 10rem;
+    }
+
+    @include media-desktop {
+      padding-left: 5rem;
+    }
+  }
+
+  &__song {
+    @include media-tablet {
+        padding-right: 20rem;
+    }
+  }
+}
