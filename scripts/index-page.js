@@ -1,6 +1,6 @@
 //Comments array
 const comments = [
-    { name: "Miles Acosta", date: "12/20/2020", text: "I can t stop listening. Every time I hear one of their songs the vocals it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can t get enough."},
+    { name: "Miles Acosta", date: "12/20/2020", text: "I can t stop listening. Every time I hear one of their songs the vocals it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough."},
     { name: "Emilie Beach", date: "01/09/2021", text: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day." },
     { name: "Connor Walton", date: "02/17/2021", text: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains." },
     
@@ -19,6 +19,10 @@ function createCommentCard(comment) {
     const commentEl = document.createElement('div');
     commentEl.classList.add('comment__main');
 
+    //Container for name and date
+    const namedateEl = document.createElement('div');
+    namedateEl.classList.add('comment__main-namedate');
+
     const heading = document.createElement('h3');
     heading.innerText = comment.name;
     heading.classList.add('comment__name');
@@ -31,11 +35,16 @@ function createCommentCard(comment) {
     paragraphEl.innerText = comment.text;
     paragraphEl.classList.add('comment__text');
 
+    //Append icon and comment body to section
     sectionEl.appendChild(avatarEl);
     sectionEl.appendChild(commentEl);
 
-    commentEl.appendChild(heading);
-    commentEl.appendChild(dateEl);
+    //Append Name and date to div
+    namedateEl.appendChild(heading);
+    namedateEl.appendChild(dateEl);
+
+    //Append namedate and paragraph to comment div
+    commentEl.appendChild(namedateEl);
     commentEl.appendChild(paragraphEl);
 
     // return commentEl;
