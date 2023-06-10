@@ -529,13 +529,16 @@ html {
 .form {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
 }
 .form__icon {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  margin-top: 1.5rem;
+  margin-top: 27px;
+  background-image: url(/assets/images/Mohan-muruge.jpg);
+  background-size: cover;
+  flex: 0 0 auto;
 }
 .form__fields {
   display: flex;
@@ -555,6 +558,7 @@ html {
   color: #323232;
   font-size: 0.8125rem;
   line-height: 1.125rem;
+  color: #323232;
 }
 .form__button {
   height: 40px;
@@ -568,6 +572,7 @@ html {
   font-size: 0.625rem;
   line-height: 1.25rem;
   color: #FFFFFF;
+  cursor: pointer;
 }
 
 label {
@@ -579,4 +584,60 @@ label {
   font-size: 0.625rem;
   line-height: 1.25rem;
   color: #AFAFAF;
+}
+
+::-moz-placeholder {
+  color: #323232;
+}
+
+::placeholder {
+  color: #323232;
+}
+
+.comments {
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 2rem;
+}
+
+.comment {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.comment__icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  margin-top: 27px;
+  flex: 0 0 auto;
+  background-color: grey;
+}
+.comment__main {
+  justify-content: left;
+}
+.comment__name {
+  font-family: "AvenirNext";
+  font-style: normal;
+  font-weight: 400;
+  color: #323232;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: bold;
+}
+.comment__date {
+  font-family: "AvenirNext";
+  font-style: normal;
+  font-weight: 400;
+  color: #323232;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+}
+.comment__text {
+  font-family: "AvenirNext";
+  font-style: normal;
+  font-weight: 400;
+  color: #323232;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
 }/*# sourceMappingURL=bio.css.map */

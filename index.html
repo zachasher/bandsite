@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="./styles/bio.css" />
+    <script src="/scripts/index-page.js" defer></script>
     <title>Bandsite</title>
   </head>
   <body>
@@ -122,11 +123,12 @@
       <section class="comment-section">
         <h2 class="comment-section__title">Join the Conversation</h2>
         <article class="form">
-          <img
+          <!-- <img
             class="form__icon"
             src="./assets/images/Mohan-muruge.jpg"
-          />
-          <div class="form__fields">
+          /> -->
+          <div class="form__icon"></div>
+          <form class="form__fields">
             <label for="name">NAME</label>
             <input 
                 type="text" 
@@ -134,11 +136,14 @@
                 placeholder="Enter your name"
                 required
                 class="form__input"/>
-            <label for="comment">COMMENT</label>
-              <textarea name="comment" rows="5" class="form__input">Add a new comment</textarea>
+            <label for="text">COMMENT</label>
+              <textarea placeholder="Add a new comment" name="text" rows="5" class="form__input"></textarea>
             <button type="submit" class="form__button">COMMENT</button>
-          </div>
+          </form>
         </article>
+        <section class="comments">
+        <!-- Comments go here -->
+        </section>
       </section>
     </main>
 
