@@ -10,7 +10,7 @@
     url("/assets/images/hero-shows.jpg");
   background-size: cover;
   background-position: center;
-//   height: 40vh;
+  //   height: 40vh;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -45,7 +45,54 @@
 
   &__song {
     @include media-tablet {
-        padding-right: 20rem;
+      padding-right: 20rem;
     }
+  }
+}
+
+.show-section {
+  // margin: 1rem;
+  // padding: 1rem;
+
+  &__title {
+    @include mobile-section-header;
+    padding: 1rem;
+  }
+}
+
+.show {
+  padding: 1rem;
+  border-bottom: 1px solid $bandsite-mercury;
+
+  &__details {
+    padding-bottom: 1rem;
+  }
+
+  &__label {
+    @include mobile-label-button;
+    color: $bandsite-silver;
+  }
+
+  &__date {
+    @include mobile-subheader;
+  }
+
+  &__venue {
+    @include mobile-body-copy;
+  }
+
+  &__location {
+    @include mobile-body-copy;
+  }
+
+  &__button {
+    height: 40px;
+    width: 100%;
+    background-color: $bandsite-black;
+    border-radius: 4px;
+    border: none;
+    @include mobile-label-button;
+    color: $bandsite-white;
+    cursor: pointer;
   }
 }
