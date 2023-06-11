@@ -10,7 +10,6 @@
     url("/assets/images/hero-shows.jpg");
   background-size: cover;
   background-position: center;
-  //   height: 40vh;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -19,14 +18,13 @@
   padding: 2rem 1rem 1rem 1rem;
 
   @include media-tablet {
-    // height: 35vh;
     padding: 2rem 2rem 2rem 2rem;
   }
 
   &__subtitle {
     @include mobile-body-copy;
     color: $bandsite-white;
-    padding-bottom: 1rem;
+    padding-bottom: 1.5rem;
   }
 
   &__title {
@@ -50,49 +48,96 @@
   }
 }
 
-.show-section {
-  // margin: 1rem;
-  // padding: 1rem;
+.shows {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1rem;
 
   &__title {
     @include mobile-section-header;
-    padding: 1rem;
+    padding: 1.5rem 1rem 0 1rem;
+  }
+
+  &__label-container {
+    display: none;
+    align-items: center;
+
+    @include media-tablet {
+      display: flex;
+      padding:1rem 2rem 0 2rem;
+    }
+  }
+
+  &__label {
+    width: 25%;
+    @include mobile-label-button;
+    color: $bandsite-silver;
   }
 }
 
 .show {
+  display: flex;
+  flex-direction: column;
   padding: 1rem;
   border-bottom: 1px solid $bandsite-mercury;
 
-  &__details {
-    padding-bottom: 1rem;
+  @include media-tablet {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2rem;
   }
 
   &__label {
     @include mobile-label-button;
     color: $bandsite-silver;
+    padding-bottom: 4px;
+
+    @include media-tablet {
+      display: none;
+    }
   }
 
   &__date {
     @include mobile-subheader;
+    padding-bottom: 1rem;
+
+    @include media-tablet {
+      width: 25%;
+    }
   }
 
   &__venue {
     @include mobile-body-copy;
+    padding-bottom: 1rem;
+
+    @include media-tablet {
+      width: 25%;
+    }
   }
 
   &__location {
     @include mobile-body-copy;
+    padding-bottom: 1rem;
+
+    @include media-tablet {
+      width: 25%;
+    }
   }
 
   &__button {
     height: 40px;
-    width: 100%;
     background-color: $bandsite-black;
     border-radius: 4px;
     border: none;
     @include mobile-label-button;
     color: $bandsite-white;
     cursor: pointer;
+
+    @include media-tablet {
+      width: 25%;
+    }
   }
 }

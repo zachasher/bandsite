@@ -37,8 +37,8 @@ function createShowCard(show) {
   const showEl = document.createElement("article");
   showEl.classList.add("show");
 
-  const detailsEl = document.createElement("div");
-  detailsEl.classList.add("show__details");
+  //   const detailsEl = document.createElement("div");
+  //   detailsEl.classList.add("show__details");
 
   const dateLabelEl = document.createElement("h4");
   dateLabelEl.innerText = "Date";
@@ -69,26 +69,62 @@ function createShowCard(show) {
   buttonEl.classList.add("show__button");
 
   //Append elements to show details
-  detailsEl.appendChild(dateLabelEl);
-  detailsEl.appendChild(dateEl);
-  detailsEl.appendChild(venueLabelEl);
-  detailsEl.appendChild(venueEl);
-  detailsEl.appendChild(locationLabelEl);
-  detailsEl.appendChild(locationEl);
+//   detailsEl.appendChild(dateLabelEl);
+//   detailsEl.appendChild(dateEl);
+//   detailsEl.appendChild(venueLabelEl);
+//   detailsEl.appendChild(venueEl);
+//   detailsEl.appendChild(locationLabelEl);
+//   detailsEl.appendChild(locationEl);
 
   //Append elements to show card
-  showEl.appendChild(detailsEl);
+  //   showEl.appendChild(detailsEl);
+
+  showEl.appendChild(dateLabelEl);
+  showEl.appendChild(dateEl);
+  showEl.appendChild(venueLabelEl);
+  showEl.appendChild(venueEl);
+  showEl.appendChild(locationLabelEl);
+  showEl.appendChild(locationEl);
+
   showEl.appendChild(buttonEl);
 
   return showEl;
 }
 
+//Create Section Heading
+const showHeaderEl = document.createElement("h2");
+showHeaderEl.innerText = "Shows";
+showHeaderEl.classList.add("shows__title");
+
+// Creating labels row for tablet & desktop view
+const labelsEl = document.createElement("div");
+labelsEl.classList.add("shows__label-container");
+
+const labelsdateEl = document.createElement("h4");
+labelsdateEl.innerText = "DATE";
+labelsdateEl.classList.add("shows__label");
+
+const labelsvenueEl = document.createElement("h4");
+labelsvenueEl.innerText = "VENUE";
+labelsvenueEl.classList.add("shows__label");
+
+const labelslocationEl = document.createElement("h4");
+labelslocationEl.innerText = "LOCATION";
+labelslocationEl.classList.add("shows__label");
+
+//Append labels to label element
+labelsEl.appendChild(labelsdateEl);
+labelsEl.appendChild(labelsvenueEl);
+labelsEl.appendChild(labelslocationEl);
+
+//Append header, labels and show cards to section
+const myShowsEl = document.querySelector(".shows");
+
+myShowsEl.innerHTML = "";
+myShowsEl.appendChild(showHeaderEl);
+myShowsEl.appendChild(labelsEl);
+
 function renderShows() {
-  const myShowsEl = document.querySelector(".shows");
-
-  // Clear the comments div first
-  myShowsEl.innerHTML = "";
-
   shows.forEach((show) => {
     const card = createShowCard(show);
     myShowsEl.appendChild(card);

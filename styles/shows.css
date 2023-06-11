@@ -247,7 +247,7 @@ html {
   font-size: 0.8125rem;
   line-height: 1.125rem;
   color: #FFFFFF;
-  padding-bottom: 1rem;
+  padding-bottom: 1.5rem;
 }
 .hero__title {
   padding-bottom: 1rem;
@@ -280,22 +280,56 @@ html {
   }
 }
 
-.show-section__title {
+.shows {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1rem;
+}
+.shows__title {
   font-family: AvenirNext;
   font-style: normal;
   font-weight: 700;
   color: #323232;
   font-size: 1.5rem;
   line-height: 2rem;
-  padding: 1rem;
+  padding: 1.5rem 1rem 0 1rem;
+}
+.shows__label-container {
+  display: none;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .shows__label-container {
+    display: flex;
+    padding: 1rem 2rem 0 2rem;
+  }
+}
+.shows__label {
+  width: 25%;
+  font-family: AvenirNext;
+  font-style: normal;
+  font-weight: 700;
+  color: #323232;
+  font-size: 0.625rem;
+  line-height: 1.25rem;
+  color: #AFAFAF;
 }
 
 .show {
+  display: flex;
+  flex-direction: column;
   padding: 1rem;
   border-bottom: 1px solid #E1E1E1;
 }
-.show__details {
-  padding-bottom: 1rem;
+@media (min-width: 768px) {
+  .show {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2rem;
+  }
 }
 .show__label {
   font-family: AvenirNext;
@@ -305,6 +339,12 @@ html {
   font-size: 0.625rem;
   line-height: 1.25rem;
   color: #AFAFAF;
+  padding-bottom: 4px;
+}
+@media (min-width: 768px) {
+  .show__label {
+    display: none;
+  }
 }
 .show__date {
   font-family: AvenirNext;
@@ -313,6 +353,12 @@ html {
   color: #323232;
   font-size: 0.875rem;
   line-height: 1.375rem;
+  padding-bottom: 1rem;
+}
+@media (min-width: 768px) {
+  .show__date {
+    width: 25%;
+  }
 }
 .show__venue {
   font-family: "AvenirNext";
@@ -321,6 +367,12 @@ html {
   color: #323232;
   font-size: 0.8125rem;
   line-height: 1.125rem;
+  padding-bottom: 1rem;
+}
+@media (min-width: 768px) {
+  .show__venue {
+    width: 25%;
+  }
 }
 .show__location {
   font-family: "AvenirNext";
@@ -329,10 +381,15 @@ html {
   color: #323232;
   font-size: 0.8125rem;
   line-height: 1.125rem;
+  padding-bottom: 1rem;
+}
+@media (min-width: 768px) {
+  .show__location {
+    width: 25%;
+  }
 }
 .show__button {
   height: 40px;
-  width: 100%;
   background-color: #323232;
   border-radius: 4px;
   border: none;
@@ -344,4 +401,9 @@ html {
   line-height: 1.25rem;
   color: #FFFFFF;
   cursor: pointer;
+}
+@media (min-width: 768px) {
+  .show__button {
+    width: 25%;
+  }
 }/*# sourceMappingURL=shows.css.map */

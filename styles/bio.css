@@ -371,7 +371,6 @@ html {
   padding-top: 1.5rem;
   padding-left: 1rem;
   padding-right: 1rem;
-  padding-bottom: 1rem;
   background-color: #FFFFFF;
 }
 @media (min-width: 768px) {
@@ -514,7 +513,7 @@ html {
 }
 
 .comment-section {
-  padding: 1rem;
+  padding: 0.5rem 1rem 1rem 1rem;
 }
 .comment-section__title {
   font-family: AvenirNext;
@@ -530,6 +529,8 @@ html {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #E1E1E1;
 }
 .form__icon {
   width: 36px;
@@ -597,14 +598,14 @@ label {
 .comments {
   display: flex;
   flex-direction: column-reverse;
-  padding-top: 2rem;
 }
 
 .comment {
   display: flex;
   flex-direction: row;
   justify-content: left;
-  padding-bottom: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #E1E1E1;
 }
 .comment__icon {
   width: 36px;
