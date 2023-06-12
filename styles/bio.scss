@@ -14,7 +14,7 @@
   display: flex;
 
   @include media-tablet {
-    height: 33vh;
+    height: 35vh;
   }
 
   &__title {
@@ -107,7 +107,6 @@
   padding-top: 1.5rem;
   padding-left: 1rem;
   padding-right: 1rem;
-  // padding-bottom: 1rem;
   background-color: $bandsite-white;
 
   @include media-tablet {
@@ -218,9 +217,22 @@
 .comment-section {
   padding: 0.5rem 1rem 1rem 1rem;
 
+  @include media-tablet {
+    padding: 0.75rem 2.25rem 2.25rem 2.25rem;
+  }
+
+  @include media-desktop {
+    padding: 0.75rem 5rem 2.25rem 5rem;
+  }
+
   &__title {
     @include mobile-section-header;
     padding-bottom: 1rem;
+
+    @include media-tablet {
+      @include tablet-section-header;
+      padding-top: 0;
+    }
   }
 }
 
@@ -230,6 +242,15 @@
   justify-content: center;
   padding-bottom: 1rem;
   border-bottom: 1px solid $bandsite-mercury;
+
+  @include media-tablet {
+    padding: 2.25rem;
+  }
+
+  @include media-desktop {
+    padding: 2.25rem 0;
+    margin: 0 20rem;
+  }
 
   &__icon {
     width: 36px;
@@ -254,8 +275,8 @@
   }
 
   &__input {
-    padding: 12px;
-    min-height: 36px;
+    padding: 0.75rem;
+    min-height: 2.25rem;
     border: 1px solid $bandsite-mercury;
     border-radius: 4px;
     margin-bottom: 1rem;
@@ -263,16 +284,19 @@
     color: $bandsite-black;
 
     @include media-tablet {
-      min-height: 48px;
+      min-height: 3rem;
       padding: 1rem;
+      margin-bottom: 2.25rem;
     }
   }
 
-  textarea, input {
+  textarea,
+  input {
     background-color: $bandsite-alabaster;
   }
 
-  textarea:active, input:active {
+  textarea:active,
+  input:active {
     border: 1px solid $bandsite-black;
     background-color: $bandsite-white;
   }
@@ -282,13 +306,18 @@
   // }
 
   &__button {
-    height: 40px;
+    height: 2.5rem;
     background-color: $bandsite-black;
     border-radius: 4px;
     border: none;
     @include mobile-label-button;
     color: $bandsite-white;
     cursor: pointer;
+
+    @include media-tablet {
+      width: 30%;
+      align-self: flex-end;
+    }
   }
 
   &__button:hover {
@@ -317,6 +346,15 @@ label {
   justify-content: left;
   padding: 1rem 0;
   border-bottom: 1px solid $bandsite-mercury;
+
+  @include media-tablet {
+    padding: 2.25rem;
+  }
+
+  @include media-desktop {
+    padding: 2.25rem 0;
+    margin: 0 20rem;
+  }
 
   &__icon {
     width: 36px;
@@ -356,5 +394,4 @@ label {
   &__text {
     @include mobile-body-copy;
   }
-
 }

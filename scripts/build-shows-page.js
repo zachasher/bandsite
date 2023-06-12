@@ -37,9 +37,6 @@ function createShowCard(show) {
   const showEl = document.createElement("article");
   showEl.classList.add("show");
 
-  //   const detailsEl = document.createElement("div");
-  //   detailsEl.classList.add("show__details");
-
   const dateLabelEl = document.createElement("h4");
   dateLabelEl.innerText = "DATE";
   dateLabelEl.classList.add("show__label");
@@ -68,17 +65,7 @@ function createShowCard(show) {
   buttonEl.innerText = "BUY TICKETS";
   buttonEl.classList.add("show__button");
 
-  //Append elements to show details
-//   detailsEl.appendChild(dateLabelEl);
-//   detailsEl.appendChild(dateEl);
-//   detailsEl.appendChild(venueLabelEl);
-//   detailsEl.appendChild(venueEl);
-//   detailsEl.appendChild(locationLabelEl);
-//   detailsEl.appendChild(locationEl);
-
-  //Append elements to show card
-  //   showEl.appendChild(detailsEl);
-
+  //Append Elements to section
   showEl.appendChild(dateLabelEl);
   showEl.appendChild(dateEl);
   showEl.appendChild(venueLabelEl);

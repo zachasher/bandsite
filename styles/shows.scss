@@ -18,13 +18,39 @@
   padding: 2rem 1rem 1rem 1rem;
 
   @include media-tablet {
-    padding: 2rem 2rem 2rem 2rem;
+    padding: 3rem 2rem 3rem 2rem;
+  }
+
+  @include media-desktop {
+    display: flex;
+    flex-direction: column;
+    height: 35vh;
+    align-items: left;
+    padding: 5rem;
+    justify-content: center;
+  }
+
+  &__box {
+    @include media-desktop {
+        display: flex;
+        flex-direction: row;
+        align-items: left;
+    }
   }
 
   &__subtitle {
     @include mobile-body-copy;
     color: $bandsite-white;
     padding-bottom: 1.5rem;
+
+    @include media-tablet {
+        @include tablet-subheader;
+        color: $bandsite-white;
+    }
+
+    @include media-desktop {
+        justify-self: center;
+    }
   }
 
   &__title {
@@ -35,16 +61,24 @@
     @include media-tablet {
       @include tablet-page-header;
     width: 80%;
+    padding-bottom: 2.25rem;
     }
 
     @include media-desktop {
-      padding-left: 5rem;
+    width: 100%;
+    padding-right: 5rem;
     }
   }
 
   &__song {
     @include media-tablet {
       padding-right: 20rem;
+    }
+
+    @include media-desktop {
+        padding: 0 0 0 5rem;
+        width: 100%;
+
     }
   }
 }
@@ -54,9 +88,26 @@
   flex-direction: column;
   padding: 0 1rem 1rem 1rem;
 
+  @include media-tablet {
+    padding: 0 1rem 2.25rem 1rem;
+  }
+
+  @include media-desktop {
+    padding: 0 5rem 2.25rem 5rem;
+  }
+
   &__title {
     @include mobile-section-header;
-    padding: 1.5rem 1rem 0 1rem;
+    padding-top: 1.5rem;
+
+    @include media-tablet {
+        @include tablet-section-header;
+        padding: 3rem 0rem 2.25rem 1.125rem;
+    }
+
+    @include media-desktop {
+        padding-bottom: 0;
+    }
   }
 
   &__label-container {
@@ -65,7 +116,12 @@
 
     @include media-tablet {
       display: flex;
-      padding:1rem 2rem 0 2rem;
+      padding:0 1.125rem;
+    }
+
+    @include media-desktop {
+        margin-left: 20rem;
+        width: 75%;
     }
   }
 
@@ -79,7 +135,7 @@
 .show {
   display: flex;
   flex-direction: column;
-  padding: 1rem;
+  padding: 1rem 0;
   border-bottom: 1px solid $bandsite-mercury;
 
   @include media-tablet {
@@ -88,7 +144,12 @@
     width: 100%;
     justify-content: flex-start;
     align-items: center;
-    padding: 24px 18px;
+    padding: 1.5rem 1.125rem;
+  }
+
+  @include media-desktop {
+    margin-left: 20rem;
+    width: 75%;
   }
 
   &__label {
