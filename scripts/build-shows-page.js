@@ -41,7 +41,7 @@ function createShowCard(show) {
   //   detailsEl.classList.add("show__details");
 
   const dateLabelEl = document.createElement("h4");
-  dateLabelEl.innerText = "Date";
+  dateLabelEl.innerText = "DATE";
   dateLabelEl.classList.add("show__label");
 
   const dateEl = document.createElement("p");
@@ -49,7 +49,7 @@ function createShowCard(show) {
   dateEl.classList.add("show__date");
 
   const venueLabelEl = document.createElement("h4");
-  venueLabelEl.innerText = "Venue";
+  venueLabelEl.innerText = "VENUE";
   venueLabelEl.classList.add("show__label");
 
   const venueEl = document.createElement("p");
@@ -57,7 +57,7 @@ function createShowCard(show) {
   venueEl.classList.add("show__venue");
 
   const locationLabelEl = document.createElement("h4");
-  locationLabelEl.innerText = "Location";
+  locationLabelEl.innerText = "LOCATION";
   locationLabelEl.classList.add("show__label");
 
   const locationEl = document.createElement("p");

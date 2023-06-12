@@ -541,6 +541,12 @@ html {
   background-size: cover;
   flex: 0 0 auto;
 }
+@media (min-width: 768px) {
+  .form__icon {
+    width: 48px;
+    height: 48px;
+  }
+}
 .form__fields {
   display: flex;
   flex-direction: column;
@@ -561,6 +567,19 @@ html {
   line-height: 1.125rem;
   color: #323232;
 }
+@media (min-width: 768px) {
+  .form__input {
+    min-height: 48px;
+    padding: 1rem;
+  }
+}
+.form textarea, .form input {
+  background-color: #FAFAFA;
+}
+.form textarea:active, .form input:active {
+  border: 1px solid #323232;
+  background-color: #FFFFFF;
+}
 .form__button {
   height: 40px;
   background-color: #323232;
@@ -574,6 +593,9 @@ html {
   line-height: 1.25rem;
   color: #FFFFFF;
   cursor: pointer;
+}
+.form__button:hover {
+  background-color: #000000;
 }
 
 label {
@@ -613,6 +635,12 @@ label {
   border-radius: 50%;
   flex: 0 0 auto;
   background-color: #E1E1E1;
+}
+@media (min-width: 768px) {
+  .comment__icon {
+    width: 48px;
+    height: 48px;
+  }
 }
 .comment__main {
   width: 100%;

@@ -257,6 +257,7 @@ html {
   color: #FFFFFF;
   font-size: 1.5rem;
   line-height: 2rem;
+  width: 65%;
 }
 @media (min-width: 768px) {
   .hero__title {
@@ -266,7 +267,7 @@ html {
     color: #FFFFFF;
     font-size: 3.75rem;
     line-height: 4.25rem;
-    padding-right: 10rem;
+    width: 80%;
   }
 }
 @media (min-width: 1280px) {
@@ -283,7 +284,7 @@ html {
 .shows {
   display: flex;
   flex-direction: column;
-  padding-bottom: 1rem;
+  padding: 0 1rem 1rem 1rem;
 }
 .shows__title {
   font-family: AvenirNext;
@@ -328,7 +329,7 @@ html {
     width: 100%;
     justify-content: flex-start;
     align-items: center;
-    padding: 2rem;
+    padding: 24px 18px;
   }
 }
 .show__label {
@@ -358,6 +359,7 @@ html {
 @media (min-width: 768px) {
   .show__date {
     width: 25%;
+    padding: 0;
   }
 }
 .show__venue {
@@ -372,6 +374,7 @@ html {
 @media (min-width: 768px) {
   .show__venue {
     width: 25%;
+    padding: 0;
   }
 }
 .show__location {
@@ -386,6 +389,7 @@ html {
 @media (min-width: 768px) {
   .show__location {
     width: 25%;
+    padding: 0;
   }
 }
 .show__button {
@@ -406,4 +410,15 @@ html {
   .show__button {
     width: 25%;
   }
+}
+.show__button:hover {
+  background-color: #000000;
+}
+
+.show:hover {
+  background-color: #FAFAFA;
+}
+
+.show:active {
+  background-color: #E1E1E1;
 }/*# sourceMappingURL=shows.css.map */
