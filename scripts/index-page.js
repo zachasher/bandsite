@@ -93,6 +93,9 @@ function handleFormSubmit(event) {
 
   comments.push(cardData);
   renderComments();
+
+  event.target.name.value = "";
+  event.target.text.value = "";
 }
 
 const formEl = document.querySelector(".form__fields");

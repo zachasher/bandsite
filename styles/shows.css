@@ -411,6 +411,9 @@ html {
     width: 75%;
   }
 }
+.show--active {
+  background-color: #E1E1E1;
+}
 .show__label {
   font-family: AvenirNext;
   font-style: normal;
@@ -494,10 +497,6 @@ html {
   background-color: #000000;
 }
 
-.show:hover {
+.show:not(.show--active):hover {
   background-color: #FAFAFA;
-}
-
-.show:active {
-  background-color: #E1E1E1;
 }/*# sourceMappingURL=shows.css.map */

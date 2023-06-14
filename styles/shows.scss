@@ -152,6 +152,10 @@
     width: 75%;
   }
 
+  &--active {
+    background-color: $bandsite-mercury;
+  }
+
   &__label {
     @include mobile-label-button;
     color: $bandsite-silver;
@@ -211,10 +215,6 @@
   }
 }
 
-.show:hover {
+.show:not(.show--active):hover {
     background-color: $bandsite-alabaster;
-}
-
-.show:active {
-    background-color: $bandsite-mercury;
 }

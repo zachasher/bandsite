@@ -65,6 +65,18 @@ function createShowCard(show) {
   buttonEl.innerText = "BUY TICKETS";
   buttonEl.classList.add("show__button");
 
+  // Adds a click event listener to the whole show card
+  showEl.addEventListener("click", () => {
+    // Removes active class from all show cards
+    const allShows = document.querySelectorAll(".show");
+    allShows.forEach((showCard) => {
+      showCard.classList.remove("show--active");
+    });
+
+    // Adds the active class to the clicked show card
+    showEl.classList.add("show--active");
+  });
+
   //Append Elements to section
   showEl.appendChild(dateLabelEl);
   showEl.appendChild(dateEl);
