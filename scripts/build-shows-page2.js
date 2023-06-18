@@ -76,6 +76,7 @@ function createShowCard(show) {
   return showEl;
 }
 
+//Import data from API and render into shows
 const showsURL = "https://project-1-api.herokuapp.com/showdates?api_key=zach";
 function renderShows() {
   axios.get(showsURL).then((response) => {
