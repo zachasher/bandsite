@@ -62,6 +62,7 @@ const myCommentsEl = document.querySelector(".comments");
 
 //Import data from API and render into shows
 const commentsURL = "https://project-1-api.herokuapp.com/comments?api_key=zach";
+
 function renderComments() {
   axios.get(commentsURL).then((response) => {
     console.log(response.data);
@@ -73,5 +74,51 @@ function renderComments() {
     });
   });
 }
+
+//Function tp handle the comment form submission
+function handleFormSubmit(event) {
+  event.preventDefault();
+
+  // Get values from input fields
+  const commentName = document.querySelector("#name").value;
+  const commentText = document.querySelector("#comment").value;
+
+  // Create an object containing the comment data
+  const commentData = {
+    name: commentName,
+    comment: commentText,
+    // timestamp: getCurrentDate(),
+  };
+
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+
+  // Post comment using axios
+  axios
+    .post(commentsURL, commentData, config)
+    .then((response) => {
+      console.log(response.data);
+
+      // Create a new comment card and append it to the comments section
+      const newComment = response.data;
+      const card = createCommentCard(newComment);
+      myCommentsEl.appendChild(card);
+
+      // Clear the form fields
+      document.querySelector("#name").value = "";
+      document.querySelector("#comment").value = "";
+    })
+    //Error message
+    .catch((error) => {
+      console.error("Error submitting comment:", error);
+    });
+}
+
+// Add event listener to the form
+const formEl = document.querySelector(".form__fields");
+formEl.addEventListener("submit", handleFormSubmit);
 
 renderComments();
