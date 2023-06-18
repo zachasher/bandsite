@@ -394,4 +394,34 @@ label {
   &__text {
     @include mobile-body-copy;
   }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1rem;
+  }
+
+  &__like {
+    background-image: url("/assets/icons/icon-like.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 1rem;
+    height: 1rem;
+    border: none;
+    background-color: $bandsite-white;
+    cursor: pointer;
+  }
+
+  &__delete {
+    background-image: url("/assets/icons/icon-delete.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 1rem;
+    height: 1rem;
+    border: none;
+    background-color: $bandsite-white;
+    cursor: pointer;
+  }
 }

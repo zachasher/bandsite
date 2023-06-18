@@ -42,9 +42,24 @@ function createCommentCard(comment) {
   paragraphEl.innerText = comment.comment;
   paragraphEl.classList.add("comment__text");
 
-  //Append icon and comment body to section
-  sectionEl.appendChild(avatarEl);
-  sectionEl.appendChild(commentEl);
+  const buttonsEl = document.createElement("div");
+  buttonsEl.classList.add("comment__buttons");
+
+  const likeEl = document.createElement("button");
+  //   likeEl.src = "/assets/icons/icon-like.svg";
+  likeEl.classList.add("comment__like");
+
+  const deleteEl = document.createElement("button");
+  //   deleteEl.src = "/assets/icons/icon-delete.svg";
+  deleteEl.classList.add("comment__delete");
+  deleteEl.addEventListener("click", () => {
+    deleteComment(comment.id);
+    sectionEl.remove();
+  });
+
+  //Append like and delete to div
+  buttonsEl.appendChild(likeEl);
+  buttonsEl.appendChild(deleteEl);
 
   //Append Name and date to div
   namedateEl.appendChild(heading);
@@ -53,6 +68,11 @@ function createCommentCard(comment) {
   //Append namedate and paragraph to comment div
   commentEl.appendChild(namedateEl);
   commentEl.appendChild(paragraphEl);
+  commentEl.appendChild(buttonsEl);
+
+  //Append icon and comment body to section
+  sectionEl.appendChild(avatarEl);
+  sectionEl.appendChild(commentEl);
 
   // return commentEl;
   return sectionEl;
@@ -122,3 +142,18 @@ const formEl = document.querySelector(".form__fields");
 formEl.addEventListener("submit", handleFormSubmit);
 
 renderComments();
+
+//Delete comments function
+function deleteComment(commentId) {
+  const deleteURL = `https://project-1-api.herokuapp.com/comments/${commentId}?api_key=zach`;
+
+  axios
+    .delete(deleteURL)
+    .then((response) => {
+      console.log(response.data);
+      // Handle successful deletion if needed
+    })
+    .catch((error) => {
+      console.error("Error deleting comment:", error);
+    });
+}
