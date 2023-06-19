@@ -69,7 +69,6 @@
       @include mobile-footer-copy;
   
       @include media-tablet {
-        // padding-right: 2.25rem;
         padding-right: 3rem;
         @include tablet-footer-copy;
       }
