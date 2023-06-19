@@ -32,9 +32,9 @@
 
   &__box {
     @include media-desktop {
-        display: flex;
-        flex-direction: row;
-        align-items: left;
+      display: flex;
+      flex-direction: row;
+      align-items: left;
     }
   }
 
@@ -44,12 +44,12 @@
     padding-bottom: 1.5rem;
 
     @include media-tablet {
-        @include tablet-subheader;
-        color: $bandsite-white;
+      @include tablet-subheader;
+      color: $bandsite-white;
     }
 
     @include media-desktop {
-        justify-self: center;
+      justify-self: center;
     }
   }
 
@@ -60,13 +60,13 @@
 
     @include media-tablet {
       @include tablet-page-header;
-    width: 80%;
-    padding-bottom: 2.25rem;
+      width: 80%;
+      padding-bottom: 2.25rem;
     }
 
     @include media-desktop {
-    width: 100%;
-    padding-right: 5rem;
+      width: 100%;
+      padding-right: 5rem;
     }
   }
 
@@ -76,9 +76,8 @@
     }
 
     @include media-desktop {
-        padding: 0 0 0 5rem;
-        width: 100%;
-
+      padding: 0 0 0 5rem;
+      width: 100%;
     }
   }
 }
@@ -94,6 +93,16 @@
 
   @include media-desktop {
     padding: 0 5rem 2.25rem 5rem;
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__list {
+    @include media-desktop {
+      width: 100%;
+      padding-top: 3rem;
+      padding-left: 5rem;
+    }
   }
 
   &__title {
@@ -101,27 +110,27 @@
     padding-top: 1.5rem;
 
     @include media-tablet {
-        @include tablet-section-header;
-        padding: 3rem 0rem 2.25rem 1.125rem;
+      @include tablet-section-header;
+      padding: 3rem 0rem 2.25rem 1.125rem;
     }
 
     @include media-desktop {
-        padding-bottom: 0;
+      padding: 3rem 0 0 0;
     }
   }
 
   &__label-container {
     display: none;
-    align-items: center;
 
     @include media-tablet {
       display: flex;
-      padding:0 1.125rem;
+      padding: 0 1.125rem;
     }
 
     @include media-desktop {
-        margin-left: 20rem;
-        width: 75%;
+      width: 100%;
+      height: 2.25rem;
+      align-items:flex-end;
     }
   }
 
@@ -150,11 +159,6 @@
     justify-content: flex-start;
     align-items: center;
     padding: 1.5rem 1.125rem;
-  }
-
-  @include media-desktop {
-    margin-left: 20rem;
-    width: 75%;
   }
 
   &--active {
@@ -228,5 +232,5 @@
 }
 
 .show:not(.show--active):hover {
-    background-color: $bandsite-alabaster;
+  background-color: $bandsite-alabaster;
 }

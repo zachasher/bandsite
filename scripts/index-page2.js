@@ -1,16 +1,27 @@
-//Function to convert timestamp to date
+//Dynamic timestamp converter function
 function convertedDate(date) {
-  const showDate = new Date(date);
-  const dateformat = {
-    month: "2-digit",
-    day: "2-digit",
-    year: "numeric",
-  };
-  const newshowdate = showDate
-    .toLocaleDateString("en-US", dateformat)
-    .replace(/\//g, "-");
-  const [mm, dd, yyyy] = newshowdate.split("-");
-  return `${mm}/${dd}/${yyyy}`;
+  const commentDate = new Date(date);
+  const currentTime = new Date();
+  const timeDifference = Math.floor((currentTime - commentDate) / 1000); //Convert ms to s
+
+  if (timeDifference < 60) {
+    return `${timeDifference} seconds ago`;
+  } else if (timeDifference < 3600) {
+    const minutes = Math.floor(timeDifference / 60);
+    return `${minutes} minutes ago`;
+  } else if (timeDifference < 86400) {
+    const hours = Math.floor(timeDifference / 3600);
+    return `${hours} hours ago`;
+  } else if (timeDifference < 2592000) {
+    const days = Math.floor(timeDifference / 86400);
+    return `${days} days ago`;
+  } else if (timeDifference < 31536000) {
+    const months = Math.floor(timeDifference / 2592000);
+    return `${months} months ago`;
+  } else {
+    const years = Math.floor(timeDifference / 31536000);
+    return `${years} years ago`;
+  }
 }
 
 //Create comment card
@@ -101,7 +112,6 @@ function renderComments() {
     console.log(response.data);
     comments = response.data;
     comments.forEach((comment) => {
-      //   createCommentCard(comment);
       const card = createCommentCard(comment);
       myCommentsEl.appendChild(card);
     });
@@ -120,7 +130,6 @@ function handleFormSubmit(event) {
   const commentData = {
     name: commentName,
     comment: commentText,
-    // timestamp: getCurrentDate(),
   };
 
   const config = {
@@ -164,7 +173,6 @@ function deleteComment(commentId) {
     .delete(deleteURL)
     .then((response) => {
       console.log(response.data);
-      // Handle successful deletion if needed
     })
     .catch((error) => {
       console.error("Error deleting comment:", error);

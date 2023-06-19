@@ -1,6 +1,3 @@
-// Shows array
-const showlist = [];
-
 //Function to convert timestamp to date
 function convertedDate(date) {
   const showDate = new Date(date);
@@ -88,11 +85,6 @@ function renderShows() {
   });
 }
 
-//Create Section Heading
-const showHeaderEl = document.createElement("h2");
-showHeaderEl.innerText = "Shows";
-showHeaderEl.classList.add("shows__title");
-
 // Creating labels row for tablet & desktop view
 const labelsEl = document.createElement("div");
 labelsEl.classList.add("shows__label-container");
@@ -115,10 +107,10 @@ labelsEl.appendChild(labelsvenueEl);
 labelsEl.appendChild(labelslocationEl);
 
 //Append header, labels and show cards to section
-const myShowsEl = document.querySelector(".shows");
+const myShowsEl = document.querySelector(".shows__list");
 
 myShowsEl.innerHTML = "";
-myShowsEl.appendChild(showHeaderEl);
+// myShowsEl.appendChild(showHeaderEl);
 myShowsEl.appendChild(labelsEl);
 
 renderShows();
