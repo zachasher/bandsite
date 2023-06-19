@@ -388,6 +388,17 @@ html {
   line-height: 1.25rem;
   color: #AFAFAF;
 }
+@media (min-width: 768px) {
+  .shows__label {
+    font-family: AvenirNext;
+    font-style: normal;
+    font-weight: 700;
+    color: #323232;
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    color: #AFAFAF;
+  }
+}
 
 .show {
   display: flex;
@@ -430,18 +441,26 @@ html {
   }
 }
 .show__date {
-  font-family: AvenirNext;
+  font-family: "AvenirNext";
   font-style: normal;
-  font-weight: 600;
+  font-weight: 400;
   color: #323232;
-  font-size: 0.875rem;
-  line-height: 1.375rem;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: bold;
   padding-bottom: 1rem;
 }
 @media (min-width: 768px) {
   .show__date {
     width: 25%;
     padding: 0;
+    font-family: "AvenirNext";
+    font-style: normal;
+    font-weight: 400;
+    color: #323232;
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    font-weight: bold;
   }
 }
 .show__venue {
@@ -457,6 +476,12 @@ html {
   .show__venue {
     width: 25%;
     padding: 0;
+    font-family: "AvenirNext";
+    font-style: normal;
+    font-weight: 400;
+    color: #323232;
+    font-size: 0.875rem;
+    line-height: 1.375rem;
   }
 }
 .show__location {
@@ -472,6 +497,12 @@ html {
   .show__location {
     width: 25%;
     padding: 0;
+    font-family: "AvenirNext";
+    font-style: normal;
+    font-weight: 400;
+    color: #323232;
+    font-size: 0.875rem;
+    line-height: 1.375rem;
   }
 }
 .show__button {
@@ -491,6 +522,13 @@ html {
 @media (min-width: 768px) {
   .show__button {
     width: 25%;
+    font-family: AvenirNext;
+    font-style: normal;
+    font-weight: 700;
+    color: #323232;
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    color: #FFFFFF;
   }
 }
 .show__button:hover {

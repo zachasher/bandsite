@@ -129,6 +129,11 @@
     width: 25%;
     @include mobile-label-button;
     color: $bandsite-silver;
+
+    @include media-tablet {
+      @include tablet-label-button;
+      color: $bandsite-silver;
+    }
   }
 }
 
@@ -167,12 +172,15 @@
   }
 
   &__date {
-    @include mobile-subheader;
+    @include mobile-body-copy;
+    font-weight: bold;
     padding-bottom: 1rem;
 
     @include media-tablet {
       width: 25%;
       padding: 0;
+      @include tablet-body-copy;
+      font-weight: bold;
     }
   }
 
@@ -183,6 +191,7 @@
     @include media-tablet {
       width: 25%;
       padding: 0;
+      @include tablet-body-copy;
     }
   }
 
@@ -193,6 +202,7 @@
     @include media-tablet {
       width: 25%;
       padding: 0;
+      @include tablet-body-copy;
     }
   }
 
@@ -207,6 +217,8 @@
 
     @include media-tablet {
       width: 25%;
+      @include tablet-label-button;
+      color: $bandsite-white;
     }
   }
 
