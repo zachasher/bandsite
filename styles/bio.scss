@@ -287,6 +287,7 @@
       min-height: 3rem;
       padding: 1rem;
       margin-bottom: 2.25rem;
+      @include tablet-body-copy;
     }
   }
 
@@ -317,6 +318,8 @@
     @include media-tablet {
       width: 30%;
       align-self: flex-end;
+      @include tablet-label-button;
+      color: $bandsite-white;
     }
   }
 
@@ -329,6 +332,11 @@ label {
   padding-bottom: 4px;
   @include mobile-label-button;
   color: $bandsite-silver;
+
+  @include media-tablet {
+    @include tablet-label-button;
+    color: $bandsite-silver;
+  }
 }
 
 ::placeholder {
@@ -384,15 +392,29 @@ label {
   &__name {
     @include mobile-body-copy;
     font-weight: bold;
+
+    @include media-tablet {
+      @include tablet-body-copy;
+      font-weight: bold;
+    }
   }
 
   &__date {
     @include mobile-body-copy;
     color: $bandsite-silver;
+
+    @include media-tablet {
+      @include tablet-body-copy;
+      color: $bandsite-silver;
+    }
   }
 
   &__text {
     @include mobile-body-copy;
+
+    @include media-tablet {
+      @include tablet-body-copy;
+    }
   }
 
   &__buttons {
@@ -402,7 +424,10 @@ label {
   }
 
   &__like {
-    background-image: url("/assets/icons/icon-like.svg");
+    display: flex;
+
+    &-button {
+      background-image: url("/assets/icons/icon-like.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -411,6 +436,18 @@ label {
     border: none;
     background-color: $bandsite-white;
     cursor: pointer;
+    }
+
+    &-count {
+      @include mobile-body-copy;
+      display: flex;
+      justify-self: flex-start;
+      padding-left: 0.5rem;
+
+      @include media-tablet {
+        @include tablet-body-copy;
+      }
+    }
   }
 
   &__delete {

@@ -45,20 +45,33 @@ function createCommentCard(comment) {
   const buttonsEl = document.createElement("div");
   buttonsEl.classList.add("comment__buttons");
 
-  const likeEl = document.createElement("button");
-  //   likeEl.src = "/assets/icons/icon-like.svg";
-  likeEl.classList.add("comment__like");
+  //Create like button + counter
+  const likeBoxEl = document.createElement("div");
+  likeBoxEl.classList.add("comment__like");
 
+  const likeEl = document.createElement("button");
+  likeEl.classList.add("comment__like-button");
+  likeEl.addEventListener("click", () => {
+    incrementLikes(comment.id, likeCountEl);
+  });
+
+  const likeCountEl = document.createElement("p");
+  likeCountEl.innerText = comment.likes;
+  likeCountEl.classList.add("comment__like-count");
+
+  likeBoxEl.appendChild(likeEl);
+  likeBoxEl.appendChild(likeCountEl);
+
+  //Create delete button and add event listener
   const deleteEl = document.createElement("button");
-  //   deleteEl.src = "/assets/icons/icon-delete.svg";
   deleteEl.classList.add("comment__delete");
   deleteEl.addEventListener("click", () => {
     deleteComment(comment.id);
     sectionEl.remove();
   });
 
-  //Append like and delete to div
-  buttonsEl.appendChild(likeEl);
+  //Append like-box and delete to div
+  buttonsEl.appendChild(likeBoxEl);
   buttonsEl.appendChild(deleteEl);
 
   //Append Name and date to div
@@ -155,5 +168,21 @@ function deleteComment(commentId) {
     })
     .catch((error) => {
       console.error("Error deleting comment:", error);
+    });
+}
+
+//Function to increment likes + like counter
+function incrementLikes(commentId, likeCountEl) {
+  const incrementURL = `https://project-1-api.herokuapp.com/comments/${commentId}/like?api_key=zach`;
+
+  axios
+    .put(incrementURL)
+    .then((response) => {
+      console.log(response.data);
+      const updatedLikes = response.data.likes;
+      likeCountEl.innerText = updatedLikes;
+    })
+    .catch((error) => {
+      console.error("Error incrementing likes:", error);
     });
 }
