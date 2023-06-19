@@ -1,21 +1,28 @@
-//Comments array
-const comments = [
-  {
-    name: "Miles Acosta",
-    date: "12/20/2020",
-    text: "I can t stop listening. Every time I hear one of their songs the vocals it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-  },
-  {
-    name: "Emilie Beach",
-    date: "01/09/2021",
-    text: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-  },
-  {
-    name: "Connor Walton",
-    date: "02/17/2021",
-    text: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-  },
-];
+//Dynamic timestamp converter function
+function convertedDate(date) {
+  const commentDate = new Date(date);
+  const currentTime = new Date();
+  const timeDifference = Math.floor((currentTime - commentDate) / 1000); //Convert ms to s
+
+  if (timeDifference < 60) {
+    return `${timeDifference} seconds ago`;
+  } else if (timeDifference < 3600) {
+    const minutes = Math.floor(timeDifference / 60);
+    return `${minutes} minutes ago`;
+  } else if (timeDifference < 86400) {
+    const hours = Math.floor(timeDifference / 3600);
+    return `${hours} hours ago`;
+  } else if (timeDifference < 2592000) {
+    const days = Math.floor(timeDifference / 86400);
+    return `${days} days ago`;
+  } else if (timeDifference < 31536000) {
+    const months = Math.floor(timeDifference / 2592000);
+    return `${months} months ago`;
+  } else {
+    const years = Math.floor(timeDifference / 31536000);
+    return `${years} years ago`;
+  }
+}
 
 //Create comment card
 function createCommentCard(comment) {
@@ -39,16 +46,44 @@ function createCommentCard(comment) {
   heading.classList.add("comment__name");
 
   const dateEl = document.createElement("span");
-  dateEl.innerText = comment.date;
+  dateEl.innerText = convertedDate(comment.timestamp);
   dateEl.classList.add("comment__date");
 
   const paragraphEl = document.createElement("p");
-  paragraphEl.innerText = comment.text;
+  paragraphEl.innerText = comment.comment;
   paragraphEl.classList.add("comment__text");
 
-  //Append icon and comment body to section
-  sectionEl.appendChild(avatarEl);
-  sectionEl.appendChild(commentEl);
+  const buttonsEl = document.createElement("div");
+  buttonsEl.classList.add("comment__buttons");
+
+  //Create like button + counter
+  const likeBoxEl = document.createElement("div");
+  likeBoxEl.classList.add("comment__like");
+
+  const likeEl = document.createElement("button");
+  likeEl.classList.add("comment__like-button");
+  likeEl.addEventListener("click", () => {
+    incrementLikes(comment.id, likeCountEl);
+  });
+
+  const likeCountEl = document.createElement("p");
+  likeCountEl.innerText = comment.likes;
+  likeCountEl.classList.add("comment__like-count");
+
+  likeBoxEl.appendChild(likeEl);
+  likeBoxEl.appendChild(likeCountEl);
+
+  //Create delete button and add event listener
+  const deleteEl = document.createElement("button");
+  deleteEl.classList.add("comment__delete");
+  deleteEl.addEventListener("click", () => {
+    deleteComment(comment.id);
+    sectionEl.remove();
+  });
+
+  //Append like-box and delete to div
+  buttonsEl.appendChild(likeBoxEl);
+  buttonsEl.appendChild(deleteEl);
 
   //Append Name and date to div
   namedateEl.appendChild(heading);
@@ -57,48 +92,105 @@ function createCommentCard(comment) {
   //Append namedate and paragraph to comment div
   commentEl.appendChild(namedateEl);
   commentEl.appendChild(paragraphEl);
+  commentEl.appendChild(buttonsEl);
+
+  //Append icon and comment body to section
+  sectionEl.appendChild(avatarEl);
+  sectionEl.appendChild(commentEl);
 
   // return commentEl;
   return sectionEl;
 }
 
+const myCommentsEl = document.querySelector(".comments");
+
+//Import data from API and render into shows
+const commentsURL = "https://project-1-api.herokuapp.com/comments?api_key=zach";
+
 function renderComments() {
-  const myCommentsEl = document.querySelector(".comments");
-
-  // Clear the comments div first
-  myCommentsEl.innerHTML = "";
-
-  comments.forEach((comment) => {
-    const card = createCommentCard(comment);
-    myCommentsEl.appendChild(card);
+  axios.get(commentsURL).then((response) => {
+    console.log(response.data);
+    comments = response.data;
+    comments.forEach((comment) => {
+      const card = createCommentCard(comment);
+      myCommentsEl.appendChild(card);
+    });
   });
 }
 
-function getCurrentDate() {
-  const currentDate = new Date(Date.now());
-  const month = currentDate.getMonth() + 1;
-  const day = currentDate.getDate();
-  const year = currentDate.getFullYear();
-  return `${month}/${day}/${year}`;
-}
-
+//Function tp handle the comment form submission
 function handleFormSubmit(event) {
   event.preventDefault();
 
-  const cardData = {
-    name: event.target.name.value,
-    date: getCurrentDate(),
-    text: event.target.text.value,
+  // Get values from input fields
+  const commentName = document.querySelector("#name").value;
+  const commentText = document.querySelector("#comment").value;
+
+  // Create an object containing the comment data
+  const commentData = {
+    name: commentName,
+    comment: commentText,
   };
 
-  comments.push(cardData);
-  renderComments();
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
 
-  event.target.name.value = "";
-  event.target.text.value = "";
+  // Post comment using axios
+  axios
+    .post(commentsURL, commentData, config)
+    .then((response) => {
+      console.log(response.data);
+
+      // Create a new comment card and append it to the comments section
+      const newComment = response.data;
+      const card = createCommentCard(newComment);
+      myCommentsEl.appendChild(card);
+
+      // Clear the form fields
+      document.querySelector("#name").value = "";
+      document.querySelector("#comment").value = "";
+    })
+    //Error message
+    .catch((error) => {
+      console.error("Error submitting comment:", error);
+    });
 }
 
+// Add event listener to the form
 const formEl = document.querySelector(".form__fields");
-
 formEl.addEventListener("submit", handleFormSubmit);
+
 renderComments();
+
+//Delete comments function
+function deleteComment(commentId) {
+  const deleteURL = `https://project-1-api.herokuapp.com/comments/${commentId}?api_key=zach`;
+
+  axios
+    .delete(deleteURL)
+    .then((response) => {
+      console.log(response.data);
+    })
+    .catch((error) => {
+      console.error("Error deleting comment:", error);
+    });
+}
+
+//Function to increment likes + like counter
+function incrementLikes(commentId, likeCountEl) {
+  const incrementURL = `https://project-1-api.herokuapp.com/comments/${commentId}/like?api_key=zach`;
+
+  axios
+    .put(incrementURL)
+    .then((response) => {
+      console.log(response.data);
+      const updatedLikes = response.data.likes;
+      likeCountEl.innerText = updatedLikes;
+    })
+    .catch((error) => {
+      console.error("Error incrementing likes:", error);
+    });
+}

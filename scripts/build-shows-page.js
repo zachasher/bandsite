@@ -1,36 +1,17 @@
-// Shows array
-const shows = [
-  {
-    date: "Mon Sept 06 2021",
-    venue: "Ronald Lane",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Tue Sept 21 2021",
-    venue: "Pier 3 East",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Fri Oct 15 2021",
-    venue: "View Lounge",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Sat Nov 06 2021",
-    venue: "Hyatt Agency",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Fri Nov 26 2021",
-    venue: "Moscow Center",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Wed Dec 15 2021",
-    venue: "Press Club",
-    location: "San Francisco, CA",
-  },
-];
+//Function to convert timestamp to date
+function convertedDate(date) {
+  const showDate = new Date(date);
+  const dateformat = {
+    weekday: "short",
+    month: "short",
+    day: "2-digit",
+    year: "numeric",
+  };
+  const newshowdate = showDate
+    .toLocaleDateString("en-US", dateformat)
+    .replace(/,/g, "");
+  return newshowdate;
+}
 
 // Create show card
 function createShowCard(show) {
@@ -42,7 +23,7 @@ function createShowCard(show) {
   dateLabelEl.classList.add("show__label");
 
   const dateEl = document.createElement("p");
-  dateEl.innerText = show.date;
+  dateEl.innerText = convertedDate(show.date);
   dateEl.classList.add("show__date");
 
   const venueLabelEl = document.createElement("h4");
@@ -50,7 +31,7 @@ function createShowCard(show) {
   venueLabelEl.classList.add("show__label");
 
   const venueEl = document.createElement("p");
-  venueEl.innerText = show.venue;
+  venueEl.innerText = show.place;
   venueEl.classList.add("show__venue");
 
   const locationLabelEl = document.createElement("h4");
@@ -87,13 +68,22 @@ function createShowCard(show) {
 
   showEl.appendChild(buttonEl);
 
+  myShowsEl.appendChild(showEl);
+
   return showEl;
 }
 
-//Create Section Heading
-const showHeaderEl = document.createElement("h2");
-showHeaderEl.innerText = "Shows";
-showHeaderEl.classList.add("shows__title");
+//Import data from API and render into shows
+const showsURL = "https://project-1-api.herokuapp.com/showdates?api_key=zach";
+function renderShows() {
+  axios.get(showsURL).then((response) => {
+    console.log(response.data);
+    shows = response.data;
+    shows.forEach((show) => {
+      createShowCard(show);
+    });
+  });
+}
 
 // Creating labels row for tablet & desktop view
 const labelsEl = document.createElement("div");
@@ -117,17 +107,10 @@ labelsEl.appendChild(labelsvenueEl);
 labelsEl.appendChild(labelslocationEl);
 
 //Append header, labels and show cards to section
-const myShowsEl = document.querySelector(".shows");
+const myShowsEl = document.querySelector(".shows__list");
 
 myShowsEl.innerHTML = "";
-myShowsEl.appendChild(showHeaderEl);
+// myShowsEl.appendChild(showHeaderEl);
 myShowsEl.appendChild(labelsEl);
-
-function renderShows() {
-  shows.forEach((show) => {
-    const card = createShowCard(show);
-    myShowsEl.appendChild(card);
-  });
-}
 
 renderShows();
